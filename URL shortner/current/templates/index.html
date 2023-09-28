@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>URL Shortener</title>
+   <style>
+      body {
+        background-image: url("1094164.png");
+      }
+      form,h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+    </style>
+</head>
+<body>
+   <h1>URL Shortener</h1>
+   <form method="POST" action="{{ url_for('index') }}">
+      <div class="form-group">
+        <input type="url" name="long_url" placeholder="Enter the URL" required class="form-control" id="pwd">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div id="json-container"></div>
+    <script>
+     fetch('allurls.json')
+    .then(response => response.json())
+    .then(data => {
+        const jsonContainer = document.getElementById('json-container');
+        jsonContainer.textContent = JSON.stringify(data, null, 4);
+    })
+    .catch(error => {
+        console.error('Error fetching JSON:', error);
+    });
+    </script>
+</body>
+</html>
