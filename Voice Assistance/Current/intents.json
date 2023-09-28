@@ -1,0 +1,19 @@
+{
+        "intents": [
+          {
+            "tag": "greeting",
+            "patterns": ["hello", "hi", "hey"],
+            "responses": ["Hello!", "Hi there!", "Greetings!"]
+          },
+          {
+            "tag": "create_file",
+            "patterns": ["create a file", "make a file", "generate a file"],
+            "responses": ["File created."]
+          },
+          {
+            "tag": "goodbye",
+            "patterns": ["goodbye", "bye", "see you later"],
+            "responses": ["Goodbye!", "Take care!", "See you later!"]
+          } 
+        ]
+}
